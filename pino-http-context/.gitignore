@@ -1,0 +1,12 @@
+# Logs
+*.log
+
+.env
+.env.local
+.env_local
+.env_prod
+.env_staging
+
+.DS_Store
+.vscode
+node_modules/*

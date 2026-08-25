@@ -1,4 +1,4 @@
-# nodejs-memory-leak-hunt
+# nodejs-memory-leak
 
 > A deliberately leaky Node.js service + the heap-snapshot workflow that diagnosed it.
 > Companion repo to the Medium post **"I Chased a Node.js Memory Leak for Three Days"**.

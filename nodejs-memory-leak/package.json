@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-memory-leak-hunt",
+  "version": "1.0.0",
+  "description": "A deliberately leaky Node.js service + the heap-snapshot workflow that diagnosed it. Companion repo to the Medium post.",
+  "main": "src/leaky-server.js",
+  "scripts": {
+    "start:leaky": "node --expose-gc src/leaky-server.js",
+    "start:fixed": "node --expose-gc src/fixed-server.js",
+    "load": "node test/load.js",
+    "snapshot": "node scripts/snapshot.js",
+    "diff": "node scripts/diff-snapshots.js",
+    "reproduce": "bash scripts/reproduce-leak.sh"
+  },
+  "keywords": [
+    "nodejs",
+    "memory-leak",
+    "heap-snapshot",
+    "v8",
+    "debugging",
+    "production"
+  ],
+  "author": "Sana",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

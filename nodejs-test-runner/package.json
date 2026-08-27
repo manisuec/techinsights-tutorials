@@ -1,0 +1,25 @@
+{
+  "name": "test-runners-2026",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Same test suite implemented in node:test, Jest, and Vitest, for a head-to-head comparison.",
+  "scripts": {
+    "test:node": "node --test node-test/test/*.test.js",
+    "test:node:watch": "node --test --watch node-test/test/*.test.js",
+    "test:node:cov": "node --test --experimental-test-coverage --test-coverage-include='src/**/*.js' node-test/test/*.test.js",
+    "test:jest": "NODE_OPTIONS=--experimental-vm-modules jest --config jest/jest.config.js",
+    "test:jest:watch": "NODE_OPTIONS=--experimental-vm-modules jest --config jest/jest.config.js --watch",
+    "test:vitest": "cd vitest && npx vitest run",
+    "test:vitest:watch": "cd vitest && npx vitest",
+    "test:vitest:cov": "cd vitest && npx vitest run --coverage",
+    "test:all": "npm run test:node && npm run test:jest && npm run test:vitest"
+  },
+  "devDependencies": {
+    "jest": "^30.0.0",
+    "vitest": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
